@@ -9,7 +9,7 @@ if (len(sys.argv) - 1 != 3):
 
 fun_ops = {'+': add, '/': div, '*': mul, '-': sub}
 
-if (sys.argv[2] not in fun_ops):
+if (sys.argv[2] not in list(fun_ops.keys)):
     print("Unknown operator. Available operators: +, -, * and /")
     exit(1)
 
