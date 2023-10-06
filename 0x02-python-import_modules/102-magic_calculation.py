@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    from magic_calculation_102 import add, sub
-
 
 def magic_calculation(a, b):
+    if __name__ == "__main__":
+        from magic_calculation_102 import add, sub
+
     if a < b:
         res = add(a, b)
         for i in range(4, 6):
