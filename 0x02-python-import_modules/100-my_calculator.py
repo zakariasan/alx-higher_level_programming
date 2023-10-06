@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from calculator_1.py import add, div, sub, mul
+    from calculator_1 import add, div, sub, mul
     import sys
 
 if (len(sys.argv) - 1 != 3):
@@ -9,7 +9,7 @@ if (len(sys.argv) - 1 != 3):
 
 fun_ops = {'+': add, '/': div, '*': mul, '-': sub}
 
-if (sys.argv[2] not in list(fun_ops.keys)):
+if (sys.argv[2] not in list(fun_ops.keys())):
     print("Unknown operator. Available operators: +, -, * and /")
     exit(1)
 
