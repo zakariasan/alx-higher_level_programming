@@ -3,15 +3,15 @@
 #include <string.h>
 /**
  * print_python_list_info - print list infos
+ * @p : python object
  *
- * Return: Always 0.
  */
 void print_python_list_info(PyObject *p)
 {
-	size_t len,i;
+	size_t len, i;
 	PyListObject *obj_list;
 	PyObject *obj;
-	
+
 	if (!strcmp(p->ob_base->tp_name, 'list'))
 	{
 		obj_list = p;
@@ -28,5 +28,5 @@ void print_python_list_info(PyObject *p)
 		}
 
 	}
-	
+
 }
