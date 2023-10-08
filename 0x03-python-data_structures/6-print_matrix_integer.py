@@ -7,4 +7,3 @@ def print_matrix_integer(matrix=[[]]):
             if (item.index(row) != len(item) - 1):
                 print(" ", end='')
         print()
-    return matrix
