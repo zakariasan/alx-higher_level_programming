@@ -1,8 +1,7 @@
 #include <Python.h>
 #include <object.h>
 #include <listobject.h>
-#include <stddef.h>
-#include <string.h>
+
 /**
  * print_python_list_info - print list infos
  * @p : python object
@@ -10,11 +9,11 @@
  */
 void print_python_list_info(PyObject *p)
 {
-	size_t i;
+	long int i;
 	PyListObject *obj;
 
-	obj = p;
-	printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
+	obj = (PyListObject *)p;
+	printf("[*] Size of the Python List = %li\n", PyList_Size(p));
 	printf("[*] Allocated = %ld\n", obj->allocated);
 
 	i = 0;
