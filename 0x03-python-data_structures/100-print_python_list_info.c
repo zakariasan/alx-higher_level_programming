@@ -20,11 +20,8 @@ void print_python_list_info(PyObject *p)
 	i = 0;
 	while (i < PyList_Size(p))
 	{
-			printf("Element %ld: %s\n", i,
-					Py_TYPE(obj->ob_item[i])->tp_name);
+		printf("Element %ld: %s\n", i,
+				Py_TYPE(obj->ob_item[i])->tp_name);
 		i++;
 	}
-
-}
-
 }
