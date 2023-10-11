@@ -6,5 +6,5 @@ def weight_average(my_list=[]):
         for gr in my_list:
             up += (gr[0] * gr[1])
             down += (gr[1])
-            return (up/down)
+        return (up/down)
     return (0)
