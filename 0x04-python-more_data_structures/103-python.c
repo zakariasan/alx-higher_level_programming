@@ -10,6 +10,7 @@ void print_python_bytes(PyObject *p)
 	char *str;
 	size_t size, i, max_val;
 
+	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
@@ -20,7 +21,6 @@ void print_python_bytes(PyObject *p)
 	size = ((PyVarObject *)p)->ob_size;
 	str = ((PyBytesObject *)p)->ob_sval;
 	max_val = (size >= 10) ? 10 : size + 1;
-	printf("[.] bytes object info\n");
 	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", str);
 	printf("  first %ld bytes: ", max_val);
