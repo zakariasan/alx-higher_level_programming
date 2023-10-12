@@ -23,7 +23,7 @@ void print_python_bytes(PyObject *p)
 	max_val = (size >= 10) ? 10 : size + 1;
 	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", str);
-	printf("  first %ld bytes: ", max_val);
+	printf("  first %ld bytes:", max_val);
 
 	for (i = 0; i < max_val; i++)
 	{
