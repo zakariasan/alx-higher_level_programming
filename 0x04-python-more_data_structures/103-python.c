@@ -39,8 +39,7 @@ void print_python_list(PyObject *p)
 void print_python_bytes(PyObject *p)
 {
 	char *str;
-	size_t size, i;
-	PyBytesObject *bytes = (PyBytesObject *)p;
+	size_t size, i, max_val;
 
 	if (!PyBytes_Check(p))
 	{
@@ -51,14 +50,18 @@ void print_python_bytes(PyObject *p)
 
 	size = ((PyVarObject *)p)->ob_size;
 	str = ((PyBytesObject *)p)->ob_sval;
-
+	max_val = (size >= 10) ? 10 : size +1;
 	printf("[.] bytes object info\n");
 	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", str);
-	printf("  first %ld bytes: ", size < 10 ? size : 10);
+	printf("  first %ld bytes: ", max_val);
 
-	for (i = 0; i < size && i < 10; i++)
+	for (i = 0; i < max_val; i++)
 	{
-		printf("%02hhx%s", bytes->ob_sval[i], i < 9 ? " " : "\n");
+		if (str[i] >= 0)
+			printf(" %02x", str[i]);
+		else
+		 printf(" %02x", 256 + str[i]);
 	}
+	printf("\n");
 }
