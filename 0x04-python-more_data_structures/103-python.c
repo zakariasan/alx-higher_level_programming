@@ -8,14 +8,15 @@
 void print_python_list(PyObject *p)
 {
 	PyObject *item;
-
+	PyListObject *list;
+	
 	if (!PyList_Check(p))
 	{
-		fprintf(stderr, "Invalid List Object\n");
+		printf("Invalid List Object\n");
 		return;
 	}
 
-	PyListObject *list = (PyListObject *)p;
+	list = (PyListObject *)p;
 
 	printf("[*] Python list info\n");
 	printf("Size of the Python List = %ld\n", PyList_Size(p));
@@ -34,13 +35,14 @@ void print_python_list(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
+
+	PyBytesObject *bytes = (PyBytesObject *)p;
 	if (!PyBytes_Check(p))
 	{
-		fprintf(stderr, "Invalid Bytes Object\n");
+		printf("Invalid Bytes Object\n");
 		return;
 	}
 
-	PyBytesObject *bytes = (PyBytesObject *)p;
 
 	printf("[.] bytes object info\n");
 	printf("Size of the bytes object = %ld\n", PyBytes_Size(p));
