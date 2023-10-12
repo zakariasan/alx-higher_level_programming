@@ -27,7 +27,7 @@ void print_python_list(PyObject *p)
 	while (i < size)
 	{
 		item = ((PyListObject *)p)->ob_item[i];
-		printf("Element %ld: %s\n", i, ((obj)->ob_type)->tp_name);
+		printf("Element %ld: %s\n", i, ((item)->ob_type)->tp_name);
 		i++;
 	}
 }
