@@ -8,5 +8,4 @@ def safe_function(fct, *args):
     except Exception:
         print("Exception: {}".format(Exception), file=sys.stderr)
         return None
-    else:
-        return allin
+    return allin
