@@ -58,5 +58,4 @@ class SinglyLinkedList:
         while lst:
             printable.append(str(lst.data))
             lst = lst.next_node
-        print(printable)
         return ("\n".join(printable))
