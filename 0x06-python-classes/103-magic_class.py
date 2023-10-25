@@ -3,19 +3,18 @@ import math
 
 
 class MagicClass:
-    """Magic class alwas teher
-    her is"""
 
-    def __init__(self, radius=0):
-        self.__radius = 0
-        if type(radius) is not int and type(radius) is not float:
+    """ hello class of MagicClass
+    that can do better"""
+    def __init__(self, radius):
+        if not (isinstance(radius, int) or isinstance(radius, float)):
             raise TypeError('radius must be a number')
         self.__radius = radius
-    """ hello world """
 
+    """try the best"""
     def area(self):
-        return ((self.__radius ** 2) * math.pi)
-    """ hello agaon """
+        return self.__radius ** 2 * math.pi
 
+    """try the best"""
     def circumference(self):
-        return (2 * math.pi * self.__radius)
+        return 2 * math.pi * self.__radius
