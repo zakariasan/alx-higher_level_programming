@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Import module """
+"""Import module  to define magic class"""
 import math
 
 
 class MagicClass:
+    '''magic class def and init'''
 
     def __init__(self, radius=0):
 
