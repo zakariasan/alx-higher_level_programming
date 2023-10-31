@@ -3,4 +3,5 @@
 
 
 class LockedClass:
+    "prevent from creating other"
     __slots__ = ('first_name', )
