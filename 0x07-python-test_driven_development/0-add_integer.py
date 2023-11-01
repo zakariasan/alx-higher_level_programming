@@ -3,6 +3,7 @@
 
 
 def add_integer(a, b=98):
+    """Sum of tow nbrs"""
     if (type(a) != int):
         if (type(a) != float):
             raise TypeError("a must be an integer")
