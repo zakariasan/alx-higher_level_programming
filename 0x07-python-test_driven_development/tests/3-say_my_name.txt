@@ -1,0 +1,48 @@
+Usage: add_integer : add tow (int or float) nbr
+# 1 - Import the module
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+	
+# Invalide Cases
+	
+# Edges
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> sa_my_name("zakaria", "haouzan")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sa_my_name' is not defined. Did you mean: 'say_my_name'?
+>>> say_my_name("zak", "Haouzan")
+My name is zak Haouzan
+>>> say_my_name("zak", "fifteen")
+My name is zak fifteen
+>>> say_my_name("zak", "fifteen44")
+My name is zak fifteen44
+>>> say_my_name("zak", 44)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 9, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+>>> say_my_name("zak", )
+My name is zak 
+>>> say_my_name(, )
+  File "<stdin>", line 1
+    say_my_name(, )
+                ^
+SyntaxError: invalid syntax
+>>> say_my_name(1, )
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 7, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+>>> say_my_name('', )
+My name is  
+>>> say_my_name('','z' )
+My name is  z
+>>> say_my_name('z','z' )
+My name is z z
+>>> say_my_name('zki','za' )
+My name is zki za
+

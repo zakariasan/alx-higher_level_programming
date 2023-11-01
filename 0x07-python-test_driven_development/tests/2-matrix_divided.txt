@@ -1,0 +1,87 @@
+Usage: add_integer : add tow (int or float) nbr
+# 1 - Import the module
+
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	
+# Invalide Cases
+	
+# Edges
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], 1337)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.03, 0.03, 0.03]]
+>>> matrix_divided([[4.55, 77, 100, 55], 5]
+... 
+... 
+KeyboardInterrupt
+>>> matrix_divided([[4.55, 77, 100], [55, 44, 65],[45, 51, 78]], 5)
+[[0.91, 15.4, 20.0], [11.0, 8.8, 13.0], [9.0, 10.2, 15.6]]
+>>> matrix_divided([[5.5, 57, 01], [55, 20, 10]], 2)
+  File "<stdin>", line 1
+    matrix_divided([[5.5, 57, 01], [55, 20, 10]], 2)
+                              ^
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+>>> matrix_divided([[5.5, 57, 1], [55, 20, 10]], 2)
+[[2.75, 28.5, 0.5], [27.5, 10.0, 5.0]]
+>>> matrix_divided([[5.5, 57, 1], [55, 20, 10]], -1) 
+[[-5.5, -57.0, -1.0], [-55.0, -20.0, -10.0]]
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], 1337)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.03, 0.03, 0.03]]
+>>> matrix_divided([[5.5, 57]], -2) 
+[[-2.75, -28.5]]
+>>> matrix_divided([[5.5, 57, 1], []], -2) 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 12, in matrix_divided
+    raise TypeError(str)
+TypeError: Matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([(5.5, 57)], -2) 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 12, in matrix_divided
+    raise TypeError(str)
+TypeError: Matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], 1337)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], 1str)
+  File "<stdin>", line 1
+    matrix_divided([[2,3,4],[1,2,3], [42, 42]], 1str)
+                                                ^
+SyntaxError: invalid decimal literal
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], str)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], 'str')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
+    raise TypeError("Each row of the matrix must have the same size")
+TypeError: Each row of the matrix must have the same size
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], 'string')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 19, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], [][]
+  File "<stdin>", line 1
+    matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], [][]
+                                                   ^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], [][])
+  File "<stdin>", line 1
+    matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], [][])
+                                                   ^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], )
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+>>> 
+
