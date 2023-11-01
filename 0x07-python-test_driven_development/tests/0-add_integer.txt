@@ -19,7 +19,8 @@ Usage: add_integer : add tow (int or float) nbr
 	98
 	>>> add_integer(1000)
 	1098
-
+>>> add_integer(3, 4)
+7
 # Invalide Cases
 	>>> add_integer(, 00)
 	File "<stdin>", line 1
