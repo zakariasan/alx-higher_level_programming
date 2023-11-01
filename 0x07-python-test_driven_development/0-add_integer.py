@@ -6,7 +6,7 @@ def add_integer(a, b=98):
     """Sum of tow nbrs"""
     if (not isinstance(a, (float, int))):
         raise TypeError("a must be an integer")
-    elif (not isinstance(a, (float, int))):
+    elif (not isinstance(b, (float, int))):
         raise TypeError("b must be an integer")
     else:
         return (int(a) + int(b))
