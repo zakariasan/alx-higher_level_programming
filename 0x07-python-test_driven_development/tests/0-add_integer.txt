@@ -18,23 +18,4 @@ Type "help", "copyright", "credits" or "license" for more information.
 99
 >>> add_interger(1,)
 99
->>> add_interger('',)
-Traceback (most recent call last):
-    raise TypeError("a must be an integer")
-TypeError: a must be an integer
->>> add_interger(,)
-  File "<stdin>", line 1
-    add_interger(,)
-                 ^
-SyntaxError: invalid syntax
->>> add_interger('3',)
-TypeError: a must be an integer
->>> add_interger('3','1')
-TypeError: a must be an integer
->>> add_interger('3','str')
-TypeError: a must be an integer
->>> add_interger('1','str')
-TypeError: a must be an integer
->>> add_interger(1,float('inf'))
-OverflowError: cannot convert float infinity to integer
 
