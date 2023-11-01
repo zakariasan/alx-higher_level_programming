@@ -1,62 +1,59 @@
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
 Usage: add_integer : add tow (int or float) nbr
 # 1 - Import the module
+>>> from importlib import import_module
+>>> add_integer = __import__('0-add_integer').add_integer
 
-	>>> add_integer = __import__('0-add_integer').add_integer
-
-	>>> add_integer(1, 2)
-	3
-	>>> add_integer(500, -2)
-	498
-	>>> add_integer(-500, 400)
-	-100
-	>>> add_integer(-50.0, 40.0)
-	-10
-	>>> add_integer(0.0, 0.0)
-	0
-	>>> add_integer(00, 00)
-	0
-	>>> add_integer(00)
-	98
-	>>> add_integer(1000)
-	1098
+>>> add_integer(1, 2)
+3
+>>> add_integer(500, -2)
+498
+>>> add_integer(-500, 400)
+-100
+>>> add_integer(-50.0, 40.0)
+-10
+>>> add_integer(0.0, 0.0)
+0
+>>> add_integer(00, 00)
+0
+>>> add_integer(00)
+98
+>>> add_integer(1000)
+1098
 >>> add_integer(3, 4)
 7
 # Invalide Cases
-	>>> add_integer(, 00)
+>>> add_integer(, 00)
 	File "<stdin>", line 1
 	add_integer(, 00)
 		    ^
 	SyntaxError: invalid syntax
 
-	>>> add_integer('1', 1)
-	Traceback (most recent call last):
+>>> add_integer('1', 1)
 	TypeError: a must be an integer
 
-	>>> add_integer((), -1)
-	Traceback (most recent call last):
-	TypeError: a must be an integer
+>>> add_integer((), -1)
+		TypeError: a must be an integer
 
-	>>> add_integer(None, 1)
-	Traceback (most recent call last):
-	TypeError: a must be an integer
+>>> add_integer(None, 1)
+		TypeError: a must be an integer
 
-	>>> add_integer(Undefindd)
-	Traceback (most recent call last):
-	NameError: name 'Undefindd' is not defined
+>>> add_integer(Undefindd)
+		NameError: name 'Undefindd' is not defined
 
 # Edges
-	>>> add_integer(1/1, 1/100)
-	1
+>>> add_integer(1/1, 1/100)
+1
 
-	>>> add_integer(1/1, 1/00)
+>>> add_integer(1/1, 1/00)
 	Traceback (most recent call last):
-	ZeroDivisionError: division by zero
+		ZeroDivisionError: division by zero
 
-	>>> add_integer(1/1/1, /11/100)
-	File "<stdin>", line 1
-	 add_integer(1/1/1, /11/100)
-	 ^
+>>> add_integer(1/1/1, /11/100)
+add_integer(1/1/1, /11/100)
+	^
 	SyntaxError: invalid syntax
 
-	 >>> add_integer(1/1/1, 2/11/100)
-	 1
+>>> add_integer(1/1/1, 2/11/100)
+1
