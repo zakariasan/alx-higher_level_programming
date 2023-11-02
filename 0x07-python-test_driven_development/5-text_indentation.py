@@ -3,6 +3,7 @@
 
 
 def text_indentation(text):
+    """Indentation please """
     if (not isinstance(text, str)):
         raise TypeError("text must be a string")
     ch = 0
