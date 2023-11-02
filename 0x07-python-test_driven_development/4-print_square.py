@@ -3,6 +3,7 @@
 
 
 def print_square(size):
+    """Print square if u have size"""
     if (not isinstance(size, int)):
         raise TypeError("size must be an integer")
     elif (size < 0):

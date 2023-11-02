@@ -1,8 +1,7 @@
 Usage: add_integer : add tow (int or float) nbr
 # 1 - Import the module
 
-	>>> add_integer = __import__('0-add_integer').add_integer
-
+>>> print_square = __import__('4-print_square').print_square
 	
 # Invalide Cases
 	
@@ -91,28 +90,12 @@ ValueError: size must be >= 0
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: print_square() takes 1 positional argument but 2 were given
->>> print_square(.2)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 7, in print_square
-    raise TypeError("size must be an integer")
-TypeError: size must be an integer
->>> print_square(.2)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 7, in print_square
-    raise TypeError("size must be an integer")
-TypeError: size must be an integer
 >>> print_square(inf)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-NameError: name 'inf' is not defined. Did you mean: 'int'?
+NameError: name 'inf' is not defined
 >>> print_square(float('inf'))
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 7, in print_square
-    raise TypeError("size must be an integer")
 TypeError: size must be an integer
->>> 
 
 
