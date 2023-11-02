@@ -3,6 +3,7 @@
 
 
 def matrix_divided(matrix, div):
+    """func of matrix"""
     check = all(isinstance(ro, list) and len(ro) != 0 and
                 all(isinstance(item, (int, float)) for item in ro) for ro in
                 matrix)
