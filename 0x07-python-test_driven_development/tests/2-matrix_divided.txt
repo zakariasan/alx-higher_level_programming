@@ -19,45 +19,34 @@ Usage: add_integer : add tow (int or float) nbr
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.03, 0.03, 0.03]]
 >>> matrix_divided([[5.5, 57]], -2) 
 [[-2.75, -28.5]]
->>> matrix_divided([[5.5, 57, 1], []], -2) 
+>>> matrix_divided([[3, "9"], [15 ,3]], 3)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 12, in matrix_divided
     raise TypeError(str)
-TypeError: Matrix must be a matrix (list of lists) of integers/floats
->>> matrix_divided([(5.5, 57)], -2) 
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[5.5, 2], []], 3)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 12, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[5], []], 3)
+Traceback (most recent call last):
     raise TypeError(str)
-TypeError: Matrix must be a matrix (list of lists) of integers/floats
->>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], 1337)
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[5,5], [32,32], [1]], 1337)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
     raise TypeError("Each row of the matrix must have the same size")
 TypeError: Each row of the matrix must have the same size
->>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], str)
+>>> matrix_divided([[5,5], [32,32], [1]], str)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
     raise TypeError("Each row of the matrix must have the same size")
 TypeError: Each row of the matrix must have the same size
->>> matrix_divided([[2,3,4],[1,2,3], [42, 42]], 'str')
+>>> matrix_divided([[5,5], [32,32]], str)
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 15, in matrix_divided
-    raise TypeError("Each row of the matrix must have the same size")
-TypeError: Each row of the matrix must have the same size
->>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], 'string')
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 19, in matrix_divided
     raise TypeError("div must be a number")
 TypeError: div must be a number
->>> matrix_divided([[2,3,4],[1,2,3], [42, 42,42]], )
+>>> matrix_divided([[5,5], [32,32]], 'str')
 Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+>>> matrix_divided([[5,5], [32,32]], )
+Traceback (most recent call last):
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
->>> 
 
