@@ -42,4 +42,28 @@ add_integer() missing 1 required positional argument: 'a'
 ...     print(err)
 ... 
 99
+>>> try:
+...     add_interger(float('inf'), 12)
+... except TypeError as err:
+...     print(err)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 12, in add_integer
+    return (int(a) + int(b))
+OverflowError: cannot convert float infinity to integer
+>>> try:
+...     add_interger(NaN, 2)
+... except TypeError as err:
+...     print(err)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'NaN' is not defined
+>>> try:
+...     add_interger(1.2, None)
+... except TypeError as err:
+...     print(err)
+... 
+b must be an integer
 
