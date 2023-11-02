@@ -30,3 +30,16 @@ a must be an integer
 ... except TypeError as err:
 ...     print(err)
 a must be an integer
+>>> try:
+...     add_interger()
+... except TypeError as err:
+...     print(err)
+... 
+add_integer() missing 1 required positional argument: 'a'
+>>> try:
+...     add_interger(1,)
+... except TypeError as err:
+...     print(err)
+... 
+99
+
