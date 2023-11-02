@@ -7,7 +7,7 @@ def matrix_divided(matrix, div):
     check = all(isinstance(ro, list) and len(ro) != 0 and
                 all(isinstance(item, (int, float)) for item in ro) for ro in
                 matrix)
-    str = "Matrix must be a matrix (list of lists) of integers/floats"
+    str = "matrix must be a matrix (list of lists) of integers/floats"
 
     if not isinstance(matrix, list) or not check:
         raise TypeError(str)
