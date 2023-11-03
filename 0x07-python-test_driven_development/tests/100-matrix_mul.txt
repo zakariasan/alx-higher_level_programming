@@ -141,3 +141,44 @@ Traceback (most recent call last):
   File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 33, in matrix_mul
     raise ValueError("m_a and m_b can't be multiplied")
 ValueError: m_a and m_b can't be multiplied
+>>> print(matrix_mul())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>> print(matrix_mul([], []))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 17, in matrix_mul
+    raise ValueError("m_a can't be empty")
+ValueError: m_a can't be empty
+>>> print(matrix_mul([[1,1]], []))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 19, in matrix_mul
+    raise ValueError("m_b can't be empty")
+ValueError: m_b can't be empty
+>>> print(matrix_mul([["hello"]], ["try"]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 15, in matrix_mul
+    raise TypeError("m_b must be a list of lists")
+TypeError: m_b must be a list of lists
+>>> print(matrix_mul([["hello",1]], ["try",2]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 15, in matrix_mul
+    raise TypeError("m_b must be a list of lists")
+TypeError: m_b must be a list of lists
+>>> print(matrix_mul([["1",1]], ["3",2]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 15, in matrix_mul
+    raise TypeError("m_b must be a list of lists")
+TypeError: m_b must be a list of lists
+>>> print(matrix_mul([[1,1]], []))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x07-python-test_driven_development/100-matrix_mul.py", line 19, in matrix_mul
+    raise ValueError("m_b can't be empty")
+ValueError: m_b can't be empty
+
