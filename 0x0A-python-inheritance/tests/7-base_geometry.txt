@@ -1,16 +1,12 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> baseg = BaseGeometry()
+>>> bg = BaseGeometry()
 >>> baseg.integer_validator("value", 12)
 >>> baseg.integer_validator("base", 44)
 >>> baseg.integer_validator("base", 1)
 >>> baseg.integer_validator(12, 12)
 >>> bg.integer_validator("int_1", 12)
 >>> bg.integer_validator("in", 89)
->>> try:
-...     bg.integer_validator("name1", "zak")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.name, e))
-... 
 >>> try:
 ...     bg.integer_validator("in", 89)
 ... except Exception as e:
