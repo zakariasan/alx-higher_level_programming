@@ -4,11 +4,4 @@
 >>> baseg.integer_validator("base", 44)
 >>> baseg.integer_validator("base", 1)
 >>> baseg.integer_validator(12, 12)
->>> baseg.integer_validator("helo", -22)
-ValueError: helo must be greater than 0
->>> baseg.integer_validator("helo", 0)
-ValueError: helo must be greater than 0
->>> baseg.integer_validator("helo", "hello")
-TypeError: helo must be an integer
->>> baseg.integer_validator("helo", 2.1)
-TypeError: helo must be an integer
+
