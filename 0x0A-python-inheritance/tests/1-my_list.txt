@@ -17,3 +17,14 @@
 >>> n_list.append(-45)
 >>> n_list.print_sorted()
 [-45, -2, -1, 0]
+>>> my_n_list = MyList()
+>>> my_n_list.append(-43)
+>>> my_n_list.append(-33)
+>>> my_n_list.append(-5)
+>>> my_n_list.append(-76)
+>>> my_n_list.append(-7654)
+>>> my_n_list.append(-7)
+>>> my_n_list.append(-2)
+>>> my_n_list.print_sorted()
+[-7654, -76, -43, -33, -7, -5, -2]
+
