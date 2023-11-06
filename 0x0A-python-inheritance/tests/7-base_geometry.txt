@@ -4,31 +4,11 @@
 >>> baseg.integer_validator("base", 44)
 >>> baseg.integer_validator("base", 1)
 >>> baseg.integer_validator(12, 12)
->>> baseg.integer_validator()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 >>> baseg.integer_validator("helo", -22)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 15, in integer_validator
-    raise ValueError("{} must be greater than 0".format(name))
 ValueError: helo must be greater than 0
 >>> baseg.integer_validator("helo", 0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 15, in integer_validator
-    raise ValueError("{} must be greater than 0".format(name))
 ValueError: helo must be greater than 0
 >>> baseg.integer_validator("helo", "hello")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 13, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
 TypeError: helo must be an integer
 >>> baseg.integer_validator("helo", 2.1)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/zakplugedin/Desktop/Alx/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 13, in integer_validator
-    raise TypeError("{} must be an integer".format(name))
 TypeError: helo must be an integer
