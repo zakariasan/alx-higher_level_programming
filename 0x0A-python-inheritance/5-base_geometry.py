@@ -2,6 +2,6 @@
 """Emty Class"""
 
 
-def inherits_from(obj, a_class):
+class BaseGeometry:
     """ Empty class"""
     pass
