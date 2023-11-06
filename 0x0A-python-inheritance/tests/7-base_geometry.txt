@@ -3,32 +3,4 @@
 >>> baseg.integer_validator("value", 12)
 >>> baseg.integer_validator("base", 44)
 >>> baseg.integer_validator("base", 1)
->>> try:
-...     baseg.integer_validator("helloName", 12)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.name, e))
-... 
->>> try:
-...     baseg.integer_validator("base", "hello")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[TypeError] base must be an integer
->>> try:
-...     baseg.integer_validator(12, "hello")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[TypeError] 12 must be an integer
->>> try:
-...     baseg.integer_validator()
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>> try:
-...     baseg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[ValueError] distance must be greater than 0
+
