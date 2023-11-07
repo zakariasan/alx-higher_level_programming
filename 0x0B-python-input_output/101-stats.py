@@ -22,7 +22,10 @@ if __name__ == '__main__':
 
             chunks = line.split()
             if (len(chunks) >= 2):
-                file_size = int(chunks[-1])
+                try:
+                    file_size = int(chunks[-1])
+                except (IndexError, ValueError):
+                    pass
                 code_status = chunks[-2]
                 size += file_size
 
