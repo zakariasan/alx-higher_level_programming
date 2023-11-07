@@ -18,26 +18,24 @@ if __name__ == '__main__':
 
     try:
         for line in sys.stdin:
-            cnt += 1
+            if cnt == 10:
+                print_msg(size, status)
+                cnt = 1
+            else:
+                cnt += 1
 
             chunks = line.split()
-            try:
-                file_size = int(chunks[-1])
-            except (IndexError, ValueError):
-                pass
-            try:
+            if (len(chunks) >= 2):
+                try:
+                    file_size = int(chunks[-1])
+                except (IndexError, ValueError):
+                    pass
                 code_status = chunks[-2]
                 size += file_size
 
                 if code_status in {'200', '301', '400', '401', '403', '404',
                                    '405', '500'}:
-                    if status.get(code_status, -1) == -1:
-                        status[code_status] = 1
-                    else:
-                        status[code_status] += 1
-            except IndexError:
-                pass
-            if cnt % 10 == 0:
-                print_msg(size, status)
+                    status[code_status] = status.get(code_status, 0) + 1
+        print_msg(size, status)
     except KeyboardInterrupt:
         print_msg(size, status)
