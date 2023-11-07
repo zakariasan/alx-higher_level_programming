@@ -7,5 +7,4 @@ class Square(Rectangle):
     """Square of Rect """
 
     def __init__(self, size):
-        self.__size = size
-        super().__init__(self, size, size)
+        Rectangle.__init__(self, size, size)
