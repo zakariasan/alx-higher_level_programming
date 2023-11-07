@@ -16,6 +16,7 @@ class Student:
         out = {}
         if attrs is not None:
             for att in attrs:
-                out[att] = getattr(self, att)
+                if hasattr(self, att):
+                    out[att] = getattr(self, att)
             return out
         return self.__dict__
