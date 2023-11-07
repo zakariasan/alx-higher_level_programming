@@ -21,17 +21,22 @@ if __name__ == '__main__':
             cnt += 1
 
             chunks = line.split()
-            if (len(chunks) >= 2):
-                try:
-                    file_size = int(chunks[-1])
-                except (IndexError, ValueError):
-                    pass
+            try:
+                file_size = int(chunks[-1])
+            except (IndexError, ValueError):
+                pass
+            try:
                 code_status = chunks[-2]
                 size += file_size
 
                 if code_status in {'200', '301', '400', '401', '403', '404',
                                    '405', '500'}:
-                    status[code_status] = status.get(code_status, 0) + 1
+                    if status.get(code_status, -1) == -1:
+                        status[code_status] = 1
+                    else:
+                        status[code_status] += 1
+            except IndexError:
+                pass
             if cnt % 10 == 0:
                 print_msg(size, status)
     except KeyboardInterrupt:
