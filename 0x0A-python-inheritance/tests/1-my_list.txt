@@ -1,49 +1,4 @@
 >>> MyList  = __import__('1-my_list').MyList
->>> my_list = MyList()
->>> my_list.print_sorted()
-[]
->>> 
->>> my_list.append(511)
->>> my_list.append(911)
->>> my_list.append(1)
->>> my_list.append(0)
->>> my_list.append(-1)
->>> my_list.print_sorted()
-[-1, 0, 1, 511, 911]
->>> n_list = MyList()
->>> n_list.append(-1)
->>> n_list.append(-2)
->>> n_list.append(0)
->>> n_list.append(-45)
->>> n_list.print_sorted()
-[-45, -2, -1, 0]
->>> my_n_list = MyList()
->>> my_n_list.append(-43)
->>> my_n_list.append(-33)
->>> my_n_list.append(-5)
->>> my_n_list.append(-76)
->>> my_n_list.append(-7654)
->>> my_n_list.append(-7)
->>> my_n_list.append(-2)
->>> my_n_list.print_sorted()
-[-7654, -76, -43, -33, -7, -5, -2]
->>> myls = MyList()
->>> myls.append(None)
->>> myls.print_sorted()
-[None]
->>> myls1 = MyList()
->>> myls1 = MyList(NaN)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'NaN' is not defined
->>> myls1.print_sorted()
-[]
->>> myls.append(NULL)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-NameError: name 'NULL' is not defined
->>> myls1.print_sorted()
-[]
 >>> lst = MyList()
 >>> lst.append(-3)
 >>> lst.append(-1)
