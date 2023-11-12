@@ -18,6 +18,7 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """desc of create size"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -26,6 +27,7 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
+        """desc __ str __"""
         return "[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id,
                                              self.x, self.y, self.width)
 
