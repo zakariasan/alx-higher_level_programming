@@ -18,7 +18,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """The width property."""
-        return self._width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -78,7 +78,28 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.__x, self.__y,
-                                                       self.__width,
-                                                       self.__height)
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width,
+                                                self.__height)
+
+    def update(self, *args, **kwargs):
+        """ Update attribute args and kwargs"""
+        if len(args) == 0:
+            for name, val in kwargs.items():
+                self.__setattr__(name, val)
+        else:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+
+    def to_dictionary(self):
+        """ to_dictionary funcc """
+        return {'x': getattr(self, 'x'), 'y': getattr(self, 'y'),
+                'id': getattr(self, 'id'), 'height': getattr(self, 'height'),
+                'width': getattr(self, 'width')}
