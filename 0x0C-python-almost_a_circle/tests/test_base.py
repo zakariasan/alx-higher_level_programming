@@ -23,6 +23,16 @@ class TestBase(unittest.TestCase):
         b3 = Base(100)
         self.assertEqual(b3.id, 100)
 
+        b4 = Base('0x10')
+        self.assertEqual('0x10', b4.id)
+
+        b5 = Base([1, 22])
+        self.assertListEqual([1, 22], b5.id)
+
+        self.assertIsNotNone(Base(None).id)
+        self.assertNotEqual(None, Base(None).id)
+        self.assertEqual(False, Base(False).id)
+
     def test_to_json_string(self):
         """ to json str test"""
 
