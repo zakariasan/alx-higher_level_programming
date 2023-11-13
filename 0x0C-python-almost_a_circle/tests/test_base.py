@@ -32,6 +32,15 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(Base(None).id)
         self.assertNotEqual(None, Base(None).id)
         self.assertEqual(False, Base(False).id)
+        self.assertIsNotNone(Base(None).id)
+        self.assertNotEqual(None, Base(None).id)
+        self.assertEqual(False, Base(False).id)
+        self.assertEqual(True, Base(True).id)
+        self.assertEqual(0, Base(0).id)
+        self.assertEqual(-10, Base(-10).id)
+        self.assertEqual(10, Base(10).id)
+        self.assertFalse('nb_objects' in dir(Base))
+        self.assertFalse('__nb_objects' in dir(Base))
 
     def test_to_json_string(self):
         """ to json str test"""
