@@ -102,3 +102,36 @@ class Base:
                                        id=int(row[0])) for row in str]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        import turtle
+        # Create a turtle screen
+        screen = turtle.Screen()
+        screen.title("Draw Rectangles and Squares")
+
+        # Draw rectangles
+        for rect in list_rectangles:
+            turtle.penup()
+            turtle.goto(rect.x, rect.y)
+            turtle.pendown()
+            turtle.forward(rect.width)
+            turtle.left(90)
+            turtle.forward(rect.height)
+            turtle.left(90)
+            turtle.forward(rect.width)
+            turtle.left(90)
+            turtle.forward(rect.height)
+            turtle.left(90)
+
+        # Draw squares
+        for square in list_squares:
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
+            for _ in range(4):
+                turtle.forward(square.size)
+                turtle.left(90)
+
+        # Close the turtle graphics window on click
+        turtle.exitonclick()
