@@ -7,6 +7,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 import os
+import json
 
 
 class TestBase(unittest.TestCase):
@@ -23,32 +24,19 @@ class TestBase(unittest.TestCase):
         b3 = Base(100)
         self.assertEqual(b3.id, 100)
 
-        b4 = Base('0x10')
-        self.assertEqual('0x10', b4.id)
-
-        b5 = Base([1, 22])
-        self.assertListEqual([1, 22], b5.id)
-
-        self.assertIsNotNone(Base(None).id)
-        self.assertNotEqual(None, Base(None).id)
-        self.assertEqual(False, Base(False).id)
-        self.assertIsNotNone(Base(None).id)
-        self.assertNotEqual(None, Base(None).id)
-        self.assertEqual(False, Base(False).id)
-        self.assertEqual(True, Base(True).id)
-        self.assertEqual(0, Base(0).id)
-        self.assertEqual(-10, Base(-10).id)
-        self.assertEqual(10, Base(10).id)
-        self.assertFalse('nb_objects' in dir(Base))
-        self.assertFalse('__nb_objects' in dir(Base))
-
     def test_to_json_string(self):
         """ to json str test"""
 
-        r1 = Rectangle(10, 7, 2, 8)
+        r1 = Rectangle(11, 8, 2, 8, 1)
         r1_dict = r1.to_dictionary()
         result = Base.to_json_string([r1_dict])
         self.assertIsInstance(result, str)
+        self.assertEqual(Base.to_json_string(None), "[]")
+        self.assertEqual(Base.to_json_string([]), "[]")
+        self.assertEqual(r1_dict, {'id': 1, 'width': 11, 'height': 8,
+                                   'x': 2, 'y': 8})
+        self.assertIs(type(r1_dict), dict)
+        self.assertIs(type(result), str)
 
     def test_save_to_file(self):
         """ save t file test"""

@@ -108,7 +108,7 @@ class Base:
         import turtle
         # Create a turtle screen
         screen = turtle.Screen()
-        screen.title("Draw Rectangles and Squares")
+        screen.title("Draw Rectangles and Squares By zak_41 !Youppii")
 
         # Draw rectangles
         for rect in list_rectangles:
