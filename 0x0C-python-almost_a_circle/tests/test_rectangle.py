@@ -24,24 +24,6 @@ class TestRectangle(unittest.TestCase):
     def test_attributes(self):
         """ play with attr """
 
-        self.assertRaises(TypeError, Rectangle, 10, None, msg='height must be \
-                an integer')
-        self.assertRaises(TypeError, Rectangle, 10, "1", msg='height must be \
-                an integer')
-        self.assertRaises(TypeError, Rectangle, None, 1, msg='width must be \
-                an integer')
-
-        self.assertRaises(TypeError, Rectangle, "1", 1, msg='width must be \
-                an integer')
-        self.assertRaises(TypeError, Rectangle, 10, 11, None, msg='x must be \
-                an integer')
-        self.assertRaises(TypeError, Rectangle, 10, 11, "3", msg='x must be \
-                an integer')
-        self.assertRaises(TypeError, Rectangle, 10, 11, 12, None, msg='y must \
-                be an integer')
-        self.assertRaises(TypeError, Rectangle, 10, 11, 12, "4", msg='y must \
-                be an integer')
-
         self.assertEqual(self.default_rectangle.width, 10)
         self.assertEqual(self.default_rectangle.height, 5)
         self.assertEqual(self.default_rectangle.x, 2)
@@ -50,6 +32,31 @@ class TestRectangle(unittest.TestCase):
 
     def test_width_setter(self):
         """ with setter test """
+        with self.assertRaises(TypeError) as t:
+            self.r1 = Rectangle("1", 100)
+
+        self.assertEqual(str(t.exception), "width must be an integer")
+        with self.assertRaises(TypeError):
+            self.r1.width = "width must be an integer"
+
+        with self.assertRaises(TypeError):
+            self.r2 = Rectangle(1, "1")
+
+        with self.assertRaises(TypeError):
+            self.r2.height = "height must be an integer"
+
+        with self.assertRaises(TypeError):
+            self.r1 = Rectangle(1, 2, "3")
+
+        with self.assertRaises(TypeError):
+            self.r1.x = "x must be an integer"
+
+        with self.assertRaises(TypeError):
+            self.r1 = Rectangle(1, 2, 3, "4")
+
+        with self.assertRaises(TypeError):
+            self.r1.y = "y must be an integer"
+
         with self.assertRaises(ValueError):
             self.default_rectangle.width = 0
 
