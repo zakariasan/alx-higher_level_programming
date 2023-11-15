@@ -64,7 +64,7 @@ class TestRectangle(unittest.TestCase):
             self.default_rectangle.width = "width must be > 0"
 
         with self.assertRaises(ValueError):
-            self.r1.width = 0
+            self.r1 = Rectangle(0, 2)
 
         with self.assertRaises(TypeError):
             self.r1.width = "width must be > 0"
@@ -87,8 +87,13 @@ class TestRectangle(unittest.TestCase):
             self.r1.height = -5
 
         with self.assertRaises(TypeError):
-            self.r1.height = "height must be an integer"
+            self.r1.height = "height must be > 0"
 
+        with self.assertRaises(ValueError):
+            self.r1 = Rectangle(1, 0)
+
+        with self.assertRaises(TypeError):
+            self.r1.height = "height must be > 0"
         with self.assertRaises(TypeError):
             self.default_rectangle.height = "height must be an integer"
 
@@ -98,10 +103,10 @@ class TestRectangle(unittest.TestCase):
     def test_x_setter(self):
         """ x setter test """
         with self.assertRaises(ValueError):
-            self.default_rectangle.x = -5
+            self.r1 = Rectangle(1, 3, -5)
 
         with self.assertRaises(TypeError):
-            self.default_rectangle.x = "x must be >= 0"
+            self.r1.x = "x must be >= 0"
 
         self.default_rectangle.x = 15
         self.assertEqual(self.default_rectangle.x, 15)
@@ -109,10 +114,10 @@ class TestRectangle(unittest.TestCase):
     def test_y_setter(self):
         """ y setter test """
         with self.assertRaises(ValueError):
-            self.default_rectangle.y = -5
+            self.r1 = Rectangle(1, 3, 4, -5)
 
         with self.assertRaises(TypeError):
-            self.default_rectangle.y = "y must be >= 0"
+            self.r1.y = "y must be >= 0"
 
         self.default_rectangle.y = 15
         self.assertEqual(self.default_rectangle.y, 15)
@@ -120,6 +125,10 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         """ area test """
         self.assertEqual(self.default_rectangle.area(), 10 * 5)
+        self.assertEqual(
+            str(Rectangle(14, 33, 77, 112, (7, 6))),
+            '[Rectangle] ((7, 6)) 77/112 - 14/33'
+        )
 
     def test_display(self):
         """  Redirect stdout to capture printed output """
