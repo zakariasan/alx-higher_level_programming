@@ -26,7 +26,7 @@ class TestSquare(unittest.TestCase):
             self.default_square.size = -5
 
         with self.assertRaises(TypeError):
-            self.default_square.size = "string"
+            self.default_square.size = "size must be > 0"
 
         self.default_square.size = 15
         self.assertEqual(self.default_square.size, 15)
