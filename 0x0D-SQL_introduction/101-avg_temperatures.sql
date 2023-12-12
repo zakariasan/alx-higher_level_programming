@@ -1,4 +1,4 @@
---Write a script that displays the average temperature
+-- Write a script that displays the average temperature
 SELECT city, AVG(value) AS avg_temp
 FROM temperatures
 GROUP BY city
