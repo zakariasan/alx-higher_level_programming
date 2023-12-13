@@ -1,1 +1,1 @@
-## 0x0D. SQL - Introduction
+## 0x0E. SQL - More queries
