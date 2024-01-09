@@ -4,6 +4,5 @@
 if (process.argv.length <= 3) {
   console.log(0);
 } else {
-  const pr = process.argv.sort().reverse();
-  console.log(pr[1]);
+  console.log(process.argv.sort((a, b)=> a - b).reverse()[1]);
 }
