@@ -6,5 +6,5 @@ exports.esrever = function (list) {
   for (let item = list.length - 1; item >= 0; item--) {
     ret.push(list[item]);
   }
-  return list.reverse();
+  return ret;
 };
