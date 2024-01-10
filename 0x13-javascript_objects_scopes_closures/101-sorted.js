@@ -5,7 +5,6 @@ const dicty = require('./101-data').dict;
 const res = {};
 for (const id in dicty) {
   const occurrences = dicty[id];
-  
   if (!res[occurrences]) {
     res[occurrences] = [];
   }
