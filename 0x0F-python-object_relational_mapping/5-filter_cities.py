@@ -14,12 +14,11 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
     cur.execute(
-            "SELECT * FROM states where name = '{}' ORDER BY id ASC"
-            .format(argv[4])
-            )
+            "SELECT cities.name From cities "
+            "join states on cities.state_id = states.id "
+            "where states.name = %s"
+            "ORDER BY cities.id ASC", (argv[4], ))
     query_rows = cur.fetchall()
-
-    for row in query_rows:
-        print(row)
+    print(", ".join(map(lambda item: item[0], query_rows)))
     cur.close()
     conn.close()

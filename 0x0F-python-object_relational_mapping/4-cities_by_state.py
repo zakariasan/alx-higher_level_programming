@@ -14,9 +14,9 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
     cur.execute(
-            "SELECT * FROM states where name = '{}' ORDER BY id ASC"
-            .format(argv[4])
-            )
+            "SELECT cities.id, cities.name, states.name From cities "
+            "join states on cities.state_id = states.id "
+            "ORDER BY cities.id ASC")
     query_rows = cur.fetchall()
 
     for row in query_rows:
