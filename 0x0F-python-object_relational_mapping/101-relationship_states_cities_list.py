@@ -19,6 +19,5 @@ if __name__ == "__main__":
     for state in fet:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("    {}: {}".fromat(city.id, city.name))
-    session.commit()
+            print(" {}: {}".fromat(city.id, city.name))
     session.close()
