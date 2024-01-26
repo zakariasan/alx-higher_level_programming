@@ -5,8 +5,6 @@ import sys
 
 
 if __name__ == "__main__":
-    apiurl = 'https://api.github.com/user'
-    username = sys.argv[1]
-    token = sys.argv[2]
-    request = get(apiurl, auth=auth.HTTPBasicAuth(username, token))
+    request = get('https://api.github.com/user',
+                  auth=auth.HTTPBasicAuth(sys.argv[1], sys.argv[2]))
     print(request.json().get('id'))
