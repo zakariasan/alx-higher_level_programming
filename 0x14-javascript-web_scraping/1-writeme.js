@@ -7,7 +7,6 @@ function readFile (fPath, content) {
       console.log(err);
       return;
     }
-    console.log(`${content}`);
   });
 }
 
