@@ -1,13 +1,15 @@
 #!/usr/bin/node
 const req = require('request');
 
-function getStatus (fPath) {
-  req.get(fPath, (err, res) => {
+function getStatus (id) {
+  const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
+  req(url, (err, res, body) => {
     if (err) {
       console.log(err);
       return;
     }
-    console.log(`code:${res.statusCode}`);
+    body = JSON.parse(body);
+    console.log(`${body.title}`);
   });
 }
 
