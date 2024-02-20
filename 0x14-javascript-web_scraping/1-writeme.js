@@ -5,7 +5,6 @@ function readFile (fPath, content) {
   fs.writeFile(fPath, content, 'utf8', (err) => {
     if (err) {
       console.log(err);
-      return;
     }
   });
 }
