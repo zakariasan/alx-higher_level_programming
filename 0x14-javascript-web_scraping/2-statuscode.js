@@ -7,11 +7,11 @@ function getStatus (fPath) {
       console.log(err);
       return;
     }
-    console.log(`code:${res.statusCode}`);
+    console.log(`code: ${res.statusCode}`);
   });
 }
 
-if (process.argv.length !== 4) {
+if (process.argv.length !== 3) {
   console.log('Usage: ./0-statuscode.js <url_path>');
 } else {
   getStatus(process.argv[2]);
